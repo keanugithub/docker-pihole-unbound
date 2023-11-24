@@ -18,6 +18,7 @@ permissions:
 jobs:
   readme:
     runs-on: ubuntu-latest
+    permissions: write-all
     name: Add contributors to readme
     steps:
       - name: Add contributors to readme
