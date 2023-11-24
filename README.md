@@ -86,15 +86,3 @@ I have setup a Github Aciton that runs on all pull requests that builds and publ
 ## Contributors
 
 Thank you to all contributors for help making this project better.
-
-### People who have contributed recently
-
-<!-- readme: aleksanderbl29,ZSamuels28 -start -->
-<!-- readme: aleksanderbl29,ZSamuels28 -end -->
-
-### Everyone who have contributed through time
-
-This includes contributions to the origianl project and to this fork
-
-<!-- readme: contributors -start -->
-<!-- readme: contributors -end -->
