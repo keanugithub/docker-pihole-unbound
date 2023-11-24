@@ -1,4 +1,4 @@
-FROM pihole/pihole:2023.10.0
+FROM pihole/pihole:2023.11.0
 RUN echo "deb http://deb.debian.org/debian bullseye-backports main" >> /etc/apt/sources.list
 RUN apt update && apt -t bullseye-backports install -y unbound
 
