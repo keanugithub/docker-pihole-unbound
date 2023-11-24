@@ -29,3 +29,20 @@
 #         uses: akhilmhdh/contributors-readme-action@v2.3.6
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+# ## Contributors
+
+# Thank you to all contributors for help making this project better.
+
+# ### People who have contributed recently
+
+# <!-- readme: aleksanderbl29,ZSamuels28 -start -->
+# <!-- readme: aleksanderbl29,ZSamuels28 -end -->
+
+# ### Everyone who have contributed through time
+
+# This includes contributions to the origianl project and to this fork
+
+# <!-- readme: contributors -start -->
+# <!-- readme: contributors -end -->
