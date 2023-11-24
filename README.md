@@ -66,11 +66,11 @@ docker-compose up -d
 
 ## The image is built automatically
 
-Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole) a Github Action is triggered and publishes an update for this image with the new image.
+Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole) a Github Action publishes an update for this image with the new image.
 
 The workflow file for this can be found in `.github/workflows/auto-build-container.yml`
 
-This workflow runs at 3AM UTC+1 every friday. Therefore you may experience some delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
+This workflow runs when the image tag is updated in `pihole-unbound/Dockerfile`. I do that semi-manually with the help of [the renovate bot](https://github.com/renovatebot/renovate). Therefore you may experience some delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
 
 ## Building the image locally
 
