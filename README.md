@@ -4,14 +4,19 @@
 
 ## Use Docker to run [Pi-Hole](https://pi-hole.net) with an upstream [Unbound](https://nlnetlabs.nl/projects/unbound/about/) resolver
 
-- [`one-container`](one-container/) (new) - Install Unbound directly into the Pi-Hole container
+- Install Unbound directly into the Pi-Hole container
   - This configuration contacts the DNS root servers directly, please read the Pi-Hole docs on [Pi-hole as All-Around DNS Solution](https://docs.pi-hole.net/guides/unbound/) to understand what this means.
   - With this approach, we can also simplify our Docker networking since `macvlan` is no longer necessary.
 
 ## Updates
 
 This image is regularly update with the latest release from the official pi-hole image.
-I automatically run a check every friday to update the base image if there has been a release. If there is no new relase, then I do not release any new images either.
+
+Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole) a Github Action publishes an update for this image with the new image.
+
+The workflow file for this can be found in `.github/workflows/auto-build-container.yml`
+
+This workflow runs when the image tag is updated in `pihole-unbound/Dockerfile`. I do that semi-manually with the help of [the renovate bot](https://github.com/renovatebot/renovate). Therefore you may experience some delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
 
 ## Description
 
@@ -63,14 +68,6 @@ docker-compose up -d
 ```
 
 > If using Portainer, just paste the `docker-compose.yaml` contents into the stack config and add your *environment variables* directly in the UI.
-
-## The image is built automatically
-
-Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole) a Github Action publishes an update for this image with the new image.
-
-The workflow file for this can be found in `.github/workflows/auto-build-container.yml`
-
-This workflow runs when the image tag is updated in `pihole-unbound/Dockerfile`. I do that semi-manually with the help of [the renovate bot](https://github.com/renovatebot/renovate). Therefore you may experience some delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
 
 ## Building the image locally
 
