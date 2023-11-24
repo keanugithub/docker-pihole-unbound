@@ -11,6 +11,8 @@ on:
   # cron job to trigger the build daily
   # at 3am everyday
     - cron: '0 3 * * *'
+  workflow_dispatch:
+
 
 permissions:
   contents: write
