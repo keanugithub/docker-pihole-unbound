@@ -54,7 +54,7 @@ jobs:
         context: "{{defaultContext}}:pihole-unbound/"
         platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
         push: true
-        tags: aleksanderbl/pihole-unbound:latest,aleksanderbl/pihole-unbound:${{ steps.latest_release.outputs.release }},aleksanderbl/pihole-unbound:${{ steps.latest_release.outputs.release }}-force-${{steps.date.outputs.date}}
+        tags: aleksanderbl/pihole-unbound:${{ steps.latest_release.outputs.release }}-dev,aleksanderbl/pihole-unbound:${{ steps.latest_release.outputs.release }}-force-${{steps.date.outputs.date}}
 
     - name: Create release
       uses: softprops/action-gh-release@v1
