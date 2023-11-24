@@ -8,6 +8,7 @@ on:
       - 'main'
     paths:
       - 'pihole-unbound/**'
+      - '.github/workflows/auto-build-container.yml'
   # schedule:
   # # cron job to trigger the build daily
   # # at 3am on Friday
