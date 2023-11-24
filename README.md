@@ -68,7 +68,12 @@ docker-compose up -d
 
 - [ ] Clone this repo to you machine
 - [ ] Run the commands below
+
 ```bash
 cd docker-pihole-unbound
 docker build . -t dev/docker-pihole-unbound:latest
 ```
+
+## Automatic dev builds with Github Actions
+
+I have setup a Github Aciton that runs on all pull requests that builds and publishes the image configured in the repo. The action can be found in `.github/workflows/dev-build.yml`. To use this feature please comment your repo and tag me (@aleksanderbl29) and I will run the workflow for you.
