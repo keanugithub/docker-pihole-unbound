@@ -63,3 +63,12 @@ docker-compose up -d
 ```
 
 > If using Portainer, just paste the `docker-compose.yaml` contents into the stack config and add your *environment variables* directly in the UI.
+
+## Building the image locally
+
+- [ ] Clone this repo to you machine
+- [ ] Run the commands below
+```bash
+cd docker-pihole-unbound
+docker build . -t dev/docker-pihole-unbound:latest
+```
