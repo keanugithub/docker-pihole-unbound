@@ -64,6 +64,14 @@ docker-compose up -d
 
 > If using Portainer, just paste the `docker-compose.yaml` contents into the stack config and add your *environment variables* directly in the UI.
 
+## The image is built automatically
+
+Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole) a Github Action is triggered and publishes an update for this image with the new image.
+
+The workflow file for this can be found in `.github/workflows/auto-build-container.yml`
+
+This workflow runs at 3AM UTC+1 every friday. Therefore you may experience some delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
+
 ## Building the image locally
 
 - [ ] Clone this repo to you machine
