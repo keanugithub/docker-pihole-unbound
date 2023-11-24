@@ -12,6 +12,9 @@ on:
   # at 3am everyday
     - cron: '0 3 * * *'
 
+permissions:
+  contents: write
+
 jobs:
   readme:
     runs-on: ubuntu-latest
