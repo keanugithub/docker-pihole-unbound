@@ -1,5 +1,5 @@
 ---
-name: Docker build and publish
+name: Build and publish container
 
 on:
   # cron job to trigger the build on any push to main
