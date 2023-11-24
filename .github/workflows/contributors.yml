@@ -1,0 +1,31 @@
+name: Add contributors to readme
+
+on:
+  # cron job to trigger the build on any push to main
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/contributors.yml'
+  schedule:
+  # cron job to trigger the build daily
+  # at 3am everyday
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    name: Add contributors to readme
+    steps:
+      - name: Add contributors to readme
+        uses: akhilmhdh/contributors-readme-action@v2.3.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
