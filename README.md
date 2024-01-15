@@ -1,7 +1,7 @@
 # Pi-Hole + Unbound on Docker
 
 [![Build and publish container](https://github.com/aleksanderbl29/docker-pihole-unbound/actions/workflows/auto-build-container.yml/badge.svg)](https://github.com/aleksanderbl29/docker-pihole-unbound/actions/workflows/auto-build-container.yml)
-![Docker Pulls](https://img.shields.io/docker/pulls/aleksanderbl/pihole-unbound)
+[![Docker Pulls](https://img.shields.io/docker/pulls/aleksanderbl/pihole-unbound)](https://hub.docker.com/r/aleksanderbl/pihole-unbound)
 
 
 ## Use Docker to run [Pi-Hole](https://pi-hole.net) with an upstream [Unbound](https://nlnetlabs.nl/projects/unbound/about/) resolver
