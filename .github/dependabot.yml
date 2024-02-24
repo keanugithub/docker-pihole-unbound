@@ -13,9 +13,9 @@ updates:
       time: "14:00"
       day: "friday"
     reviewers:
-      - aleksanderbl29
+      - keanugithub
     assignees:
-      - aleksanderbl29
+      - keanugithub
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
@@ -24,6 +24,6 @@ updates:
       time: "14:00"
       day: "friday"
     reviewers:
-      - aleksanderbl29
+      - keanugithub
     assignees:
-      - aleksanderbl29
+      - keanugithub
