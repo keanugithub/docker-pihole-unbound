@@ -27,11 +27,11 @@ If configured correctly, it should show something like [this](https://1.1.1.1/he
 
 This image is regularly updated with the latest release from the official pi-hole image.
 
-Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole), an automatic pull request is opened to implement the update and I do my best to merge the updates quickly.
+Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole), an automatic pull request is opened to implement the update. 
 
-The workflow file for this can be found in `.github/workflows/auto-build-container.yml`
+The workflow file for this can be found in `.github/workflows/auto-build-container.yml` which is scheduled to run everyday at 23:00 GitHub time.
 
-This workflow runs when the image tag is updated in `pihole-unbound/Dockerfile`. I do that semi-manually with the help of [the renovate bot](https://github.com/renovatebot/renovate). Therefore you may experience some delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
+This workflow runs when the image tag is updated in `pihole-unbound/Dockerfile` with the help of [the renovate bot](https://github.com/renovatebot/renovate). Hopefully, this minimizes the delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
 
 ## Description
 
@@ -96,7 +96,7 @@ docker build . -t dev/docker-pihole-unbound:latest
 
 ## Automatic dev builds with Github Actions
 
-I have setup a Github Aciton that runs on all pull requests that builds and publishes the image configured in the repo. The action can be found in `.github/workflows/dev-build.yml`. To use this feature please comment your repo and tag me (@aleksanderbl29) and I will run the workflow for you.
+There is a Github Action that runs on all pull requests that builds and publishes the image configured in the repo. The action can be found in `.github/workflows/dev-build.yml`. To use this feature please comment your repo and tag me @keanugithub and I will run the workflow for you.
 
 ## Contributors
 
