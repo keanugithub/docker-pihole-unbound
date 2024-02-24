@@ -10,10 +10,10 @@ on:
     paths:
       - 'pihole-unbound/**'
       - '.github/workflows/auto-build-container.yml'
-  # schedule:
+  schedule:
   # # cron job to trigger the build daily
-  # # at 3am on Friday
-  #   - cron:  '0 3 * * 5'
+  # # at 12 midnight everyday
+    - cron:  '0 0 * * *'
 
 permissions:
   contents: write
