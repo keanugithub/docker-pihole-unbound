@@ -31,7 +31,7 @@ Whenever there is an update for the [original pihole image](https://hub.docker.c
 
 The workflow file for this can be found in `.github/workflows/auto-build-container.yml` which is scheduled to run everyday at 23:00 GitHub time.
 
-This workflow runs when the image tag is updated in `pihole-unbound/Dockerfile` with the help of [the renovate bot](https://github.com/renovatebot/renovate). Hopefully, this minimizes the delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole)
+This workflow runs when the image tag is updated in `pihole-unbound/Dockerfile` with the help of [the renovate bot](https://github.com/renovatebot/renovate). Hopefully, this minimizes the delay whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole).
 
 ## Description
 
