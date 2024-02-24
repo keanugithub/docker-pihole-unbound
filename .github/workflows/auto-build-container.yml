@@ -38,9 +38,9 @@ jobs:
       id: previous_release
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
-        repository: "aleksanderbl29/docker-pihole-unbound"
+        repository: "keanugithub/docker-pihole-unbound"
         type: "stable"
-      run: echo release=$(curl --silent "https://api.github.com/repos/aleksanderbl29/docker-pihole-unbound/releases/latest" | jq -r '.tag_name' ) >> $GITHUB_OUTPUT
+      run: echo release=$(curl --silent "https://api.github.com/repos/keanugithub/docker-pihole-unbound/releases/latest" | jq -r '.tag_name' ) >> $GITHUB_OUTPUT
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
