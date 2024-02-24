@@ -96,7 +96,7 @@ docker build . -t dev/docker-pihole-unbound:latest
 
 ## Automatic dev builds with Github Actions
 
-There is a Github Action that runs on all pull requests that builds and publishes the image configured in the repo. The action can be found in `.github/workflows/dev-build.yml`. To use this feature please comment your repo and tag me @keanugithub and I will run the workflow for you.
+There is a Github Action that runs on all pull requests that builds and publishes the image configured in the repo. The action can be found in `.github/workflows/dev-build.yml`. To use this feature please comment your repo and tag @keanugithub. I will run the workflow for you.
 
 ## Contributors
 
