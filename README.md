@@ -1,20 +1,33 @@
-# Pi-Hole + Unbound on Docker
+# Pi-Hole + Unbound with DoT on Docker
 
 [![Build and publish container](https://github.com/keanugithub/docker-pihole-unbound/actions/workflows/auto-build-container.yml/badge.svg)](https://github.com/keanugithub/docker-pihole-unbound/actions/workflows/auto-build-container.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/keanubdh/pihole-unbound)](https://hub.docker.com/r/kanubdh/pihole-unbound)
 
 
-## Use Docker to run [Pi-Hole](https://pi-hole.net) with an upstream [Unbound](https://nlnetlabs.nl/projects/unbound/about/) resolver
+## Use Docker to run [Pi-Hole](https://pi-hole.net) with an upstream [Unbound](https://nlnetlabs.nl/projects/unbound/about/) resolver forwarding using [DoT](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-tls/)
 
-- Install Unbound directly into the Pi-Hole container
-  - This configuration contacts the DNS root servers directly, please read the Pi-Hole docs on [Pi-hole as All-Around DNS Solution](https://docs.pi-hole.net/guides/unbound/) to understand what this means.
-  - With this approach, we can also simplify our Docker networking since `macvlan` is no longer necessary.
+- This already installs Unbound directly to the Pihole container.
+- You only need to enable [DNS over TLS](https://wiki.archlinux.org/title/Domain_name_resolution#Privacy_and_security), if you want of course, by modifying `pihole-unbound/unbound-pihole.conf` on your favorite text editor and append the following configuration:
+```
+server:
+...
+	tls-system-cert: yes
+...
+forward-zone:
+        name: "."
+        forward-tls-upstream: yes
+        forward-addr: 1.1.1.1@853#cloudflare-dns.com
+```
+
+NOTE: [For each server you will need to specify the connection port using @ and its domain name with #. The domain name is required for TLS authentication and also allows setting stub-zones and using the unbound-control forward control command with domain names. There should not be any spaces in the forward-addr specification.](https://wiki.archlinux.org/title/unbound)
+
+If configured correctly, it should show something like [this](https://1.1.1.1/help#eyJpc0NmIjoiWWVzIiwiaXNEb3QiOiJZZXMiLCJpc0RvaCI6Ik5vIiwicmVzb2x2ZXJJcC0xLjEuMS4xIjoiWWVzIiwicmVzb2x2ZXJJcC0xLjAuMC4xIjoiWWVzIiwicmVzb2x2ZXJJcC0yNjA2OjQ3MDA6NDcwMDo6MTExMSI6Ik5vIiwicmVzb2x2ZXJJcC0yNjA2OjQ3MDA6NDcwMDo6MTAwMSI6Ik5vIiwiZGF0YWNlbnRlckxvY2F0aW9uIjoiTU5MIiwiaXNXYXJwIjoiTm8iLCJpc3BOYW1lIjoiQ2xvdWRmbGFyZSIsImlzcEFzbiI6IjEzMzM1In0=) on 1.1.1.1/help.
 
 ## Updates
 
-This image is regularly update with the latest release from the official pi-hole image.
+This image is regularly updated with the latest release from the official pi-hole image.
 
-Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole) an automatic pull request is opened to implemented the update and I do my best to merge the updates quickly.
+Whenever there is an update for the [original pihole image](https://hub.docker.com/r/pihole/pihole), an automatic pull request is opened to implement the update and I do my best to merge the updates quickly.
 
 The workflow file for this can be found in `.github/workflows/auto-build-container.yml`
 
@@ -87,4 +100,4 @@ I have setup a Github Aciton that runs on all pull requests that builds and publ
 
 ## Contributors
 
-Thank you to all contributors for help making this project better.
+Thanks to all who made this project possible especially to the original creator [chriscrowe](https://github.com/chriscrowe/docker-pihole-unbound), and [aleksanderbl29](https://github.com/aleksanderbl29) for the basis of this fork.
