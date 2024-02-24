@@ -86,9 +86,8 @@ docker-compose up -d
 
 ## Building the image locally
 
-- [ ] Clone this repo to you machine
-- [ ] Run the commands below
-
+- [ ] Clone this repo to your machine.
+- [ ] Run the commands:
 ```bash
 cd docker-pihole-unbound
 docker build . -t dev/docker-pihole-unbound:latest
