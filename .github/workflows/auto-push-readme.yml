@@ -21,5 +21,5 @@ jobs:
         with:
           destination_container_repo: keanubdh/pihole-unbound
           provider: dockerhub
-          short_description: 'Pihole and Unbound in one Docker Image'
+          short_description: 'A fork of Pihole + Unbound by [aleksanderbl29](https://github.com/aleksanderbl29) modified with DoT.'
           readme_file: 'README.md'
