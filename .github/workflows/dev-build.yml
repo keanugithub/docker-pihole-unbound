@@ -3,6 +3,7 @@ name: Build and publish container in development
 
 on:
   # cron job to trigger the build on any push to main
+  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -43,4 +44,4 @@ jobs:
         context: "{{defaultContext}}:pihole-unbound/"
         platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
         push: true
-        tags: aleksanderbl/pihole-unbound:dev-pr-${{ github.event.number }}-${{ steps.date.outputs.date }}
+        tags: keanubdh/pihole-unbound:dev-pr-${{ github.event.number }}-${{ steps.date.outputs.date }}
